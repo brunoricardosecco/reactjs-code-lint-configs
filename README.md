@@ -1,0 +1,1 @@
+# reactjs-code-lint-configs
