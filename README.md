@@ -3,7 +3,7 @@
 ## Intro
 
 Hello everyone! R u okay?
-In the tutorial below, I show my code and commit lint configurations for a ReactJS project! I hope help u a little..
+In the tutorial below, I show my code and commit lint configurations for a ReactJS project! I hope to help u a little...
 
 ---
 
@@ -36,7 +36,7 @@ The VSCode is available for the most operational systems.
 
 ## Commitzen
 
-[Commitizen](https://github.com/commitizen/cz-cli) is a cli to automate your commit with the correct prefix, and message. With Commitzen we'll follow the conventional commit pattern.
+[Commitizen](https://github.com/commitizen/cz-cli) is a CLI to automate your commit with the correct prefix and message. With Commitzen we'll follow the conventional commit pattern.
 
 ### Installations
 
@@ -52,7 +52,7 @@ In the directory of the project, run `npm init` to generate `package.json`, then
 
 `commitizen init cz-conventional-changelog --save --save-exact`
 
-Now commitizen must be working on. To test the magic and use, just execute:
+Now, commitizen must be working on. To test the magic and use, just execute:
 
 `git cz`
 
@@ -93,14 +93,14 @@ Now, inside of your `package.json` write:
 }
 ```
 
-And thats it! Now your commit messages will be linted and they will follow the conventional commit specification :smiley:
+And that's it! Now your commit messages will be linted and they will follow the conventional commit specification :smiley:
 
 ---
 
 # Code lint
 
 First of all, check if you installed the extensions I sad above in your VSCode.
-Now we have to delete the older configurations. If your project have this files, delete them: `.prettierrc` and `.eslintrc.json` or `.eslintrc.js`
+Now we have to delete the older configurations. If your project has these files, delete them: `.prettierrc` and `.eslintrc.json` or `.eslintrc.js`
 
 ## ESLint
 
@@ -174,10 +174,10 @@ Answer the questions following this:
 ### Others ESLint dependencies
 
 **YARN:**
-`yarn add -D prettier eslint-config-prettier eslint-plugin-prettier babel-eslint`
+`yarn add -D prettier eslint-config-prettier eslint-plugin-prettier eslint-plugin-react-hooks babel-eslint`
 **or:**
 **NPM:**
-`npm install prettier eslint-config-prettier eslint-plugin-prettier babel-eslint --dev`
+`npm install prettier eslint-config-prettier eslint-plugin-prettier eslint-plugin-react-hooks babel-eslint --dev`
 
 Now open your new file `.eslintrc.js` and replace all the file with this:
 
@@ -196,7 +196,7 @@ module.exports = {
     ecmaVersion: 11,
     sourceType: "module",
   },
-  plugins: ["react", "prettier"],
+  plugins: ["react", "prettier", "react-hooks"],
   rules: {
     "prettier/prettier": "error",
     "react/jsx-filename-extension": [
@@ -214,6 +214,8 @@ module.exports = {
     "no-param-reassign": "off",
     camelcase: "off",
     "no-console": "off",
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
   },
 };
 ```
@@ -222,7 +224,7 @@ module.exports = {
 
 ## Prettier
 
-Now let's add Prettier to the project! We gonna use Prettier to auto format the code, following the ESLint rules.
+Now let's add Prettier to the project! We gonna use Prettier to auto-format the code, following the ESLint rules.
 
 In the root of your project create the file `.prettierrc` and write:
 
@@ -261,7 +263,7 @@ indent_size = false
 
 ---
 
-Now we have the code lint installed on the project babies!!To help you to format all the created files, execute:
+Now we have the code lint installed on the project babies!! To help you to format all the created files, execute:
 
 `yarn eslint --fix src --ext .js`
 
